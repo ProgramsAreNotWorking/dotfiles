@@ -1,0 +1,40 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-weight:900;
+    font-size: 13px;
+    padding:0rem;
+    margin:0rem;
+    border:0rem;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border:0rem;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-right, .modules-left, .modules-center{
+  color:white;
+}
+
+#audio, #hardware, #tray, #clock, #network, #custom-power{
+  background-color:rgba(0,0,0,0.4);
+  border-radius:10rem;
+  padding-left:1rem;
+  padding-right:1rem;
+}
+
+#custom-power:hover{
+  background-color:rgba(0,0,0,0.6);
+}
+
+#pulseaudio, #memory, #cpu {
+  padding:0rem 0.5rem;
+}
