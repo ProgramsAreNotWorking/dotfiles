@@ -75,7 +75,7 @@
 
     //On left position //////////////////////////////////////////////////////////////////
     "network": {
-        "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interface": "enp6s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -210,7 +210,9 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-icons": {
+      "menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/custom_panel/audio_output_menu.xml", // Menu file in resources folder
+    "format-icons": {
             "headphone": "",
             "hands-free": "",
             "headset": "",
@@ -218,8 +220,15 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    },
+      "menu-actions": {
+        "volume": "$HOME/.config/waybar/audio_output_control.sh volume",
+        "output": "$HOME/.config/waybar/audio_output_control.sh output",
+        "volume_down": "$HOME/.config/waybar/audio_output_control.sh volume_down",
+        "volume_up": "$HOME/.config/waybar/audio_output_control.sh volume_up",
+        "mute": "$HOME/.config/waybar/audio_output_control.sh mute"
+      }
+       // "on-click": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {text}",
@@ -237,7 +246,7 @@
         "format" : "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-file": "$HOME/.config/waybar/custom_panel/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 			"shutdown": "shutdown",
 			"reboot": "reboot",
