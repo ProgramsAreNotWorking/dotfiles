@@ -7,13 +7,13 @@ start_daemon_on_launch = false
 notifications_enabled = false
 
 [[watch]]
-path = "/home/pedrojunior/Downloads"
-recursive = false
+path = "Downloads"
+recursive = true
 rules = ["daily_cleaner"]
 
 [[watch]]
-path = "/home/pedrojunior/.trash"
-recursive = false
+path = ".trash"
+recursive = true
 rules = ["7Days_cleaner"]
 
 [[rule]]

@@ -9,4 +9,17 @@ mongo() {
   sudo docker start mongo
 }
 
+# open_with() {
+#   if [[ "$1" =~ "^/?.+$" ]]; then
+#
+#   fi
+#   if [[ ! -e "$1" ]]; then
+#     echo "path does not exist"
+#     return 0
+#   else
+#     find "$1" "$2" "$3"
+#   fi
+#
+# }
+
 . "$HOME/.local/bin/env"
