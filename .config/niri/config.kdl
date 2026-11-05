@@ -252,9 +252,10 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "copyq"
 
 spawn-at-startup "xwayland-satellite" ":12"
-spawn-at-startup "~/Pictures/wallpapers/wallpaper_manager.sh" //change wallpapers every 1 hours
+spawn-sh-at-startup "$WALLPAPER_DIR/wallpaper_manager.sh" //change wallpapers every 1 hours
 //spawn-at-startup "labwc"
 
 //spawn-at-startup "alacritty -e ranger"
@@ -320,6 +321,11 @@ window-rule {
   opacity 0.85
 }
 
+window-rule {
+  match app-id=r"copyq"
+  open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -358,6 +364,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+B      hotkey-overlay-title="Open a broser: firefox" {spawn "firefox"; }
     Alt+Space  hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+V      hotkey-overlay-title="Open a clipboard: copyq" {spawn "copyq" "toggle";}
     // Super+Mod+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -560,7 +567,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    //Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
